@@ -1,7 +1,8 @@
-# img-book-covers
+# book-covers
 
 Collection of book cover images
-Source: Phone Cameras and Scanners
+
+- Source: Phone Cameras and Scanners
 
 ## License
 
