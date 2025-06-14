@@ -5,6 +5,9 @@ on:
       - "*"
   workflow_call:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     uses: ./.github/workflows/build.yml
