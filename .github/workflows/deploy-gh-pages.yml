@@ -2,10 +2,11 @@ name: Deploy
 
 on: workflow_call
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
-    permissions:
-      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
