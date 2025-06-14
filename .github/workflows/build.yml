@@ -14,6 +14,7 @@ jobs:
           python-version: 3.13
       - run: pip install htmligator
       - run: ./build.sh
+      - run: ls -lrt
       - uses: actions/upload-artifact@v4
         with:
           name: deliverables
