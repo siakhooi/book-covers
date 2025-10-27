@@ -15,7 +15,7 @@ jobs:
       - run: pip install htmligator
       - run: ./build.sh
       - run: ls -lrt
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: deliverables
           path: ./docs/
