@@ -2,7 +2,7 @@ name: Deployment
 on:
   push:
     branches:
-      - "*"
+      - "**"
   workflow_call:
 
 permissions:
