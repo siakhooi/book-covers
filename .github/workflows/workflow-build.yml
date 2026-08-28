@@ -1,10 +1,19 @@
-name: Build Json File
+name: Build
+on:
+  push:
+    branches:
+      - "main"
 
-on: workflow_call
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
@@ -16,9 +25,10 @@ jobs:
 
       - run: pip install htmligator
       - run: ./build.sh
-      - run: ls -lrt
+      - run: find docs
 
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
-          name: deliverables
-          path: ./docs/
+          path: docs
+
+      - uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
